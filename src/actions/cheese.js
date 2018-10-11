@@ -21,7 +21,7 @@ export const fetchCheesesError = value => {
 
 export const getCheeseAction = value => dispatch => {
     dispatch(fetchCheeseRequest())
-    return fetch('http://localhost:8080/api/cheeses')
+    return fetch(process.env.PORT)
         .then((res) => {
             return res.json();
         }) .then(res => {
