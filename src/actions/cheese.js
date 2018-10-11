@@ -21,7 +21,7 @@ export const fetchCheesesError = value => {
 
 export const getCheeseAction = value => dispatch => {
     dispatch(fetchCheeseRequest())
-    return fetch(process.env.PORT)
+    return fetch(process.env.REACT_APP_API_BASE_URL)
         .then((res) => {
             return res.json();
         }) .then(res => {
