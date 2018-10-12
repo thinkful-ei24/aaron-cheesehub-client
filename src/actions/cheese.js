@@ -19,12 +19,10 @@ export const fetchCheesesError = value => {
     }
 }
 
-export const getCheeseAction = value => dispatch => {
+export const getCheeseAction = () => dispatch => {
     dispatch(fetchCheeseRequest())
-    return fetch('https://aaron-cheese-app.herokuapp.com/api/cheeses')
-        .then((res) => {
-            return res.json();
-        }) .then(res => {
-            return dispatch(fetchCheesesSuccess(res))
-        }) .catch(err => dispatch(fetchCheesesError()));
+    fetch('https://aaron-cheese-app.herokuapp.com/api/cheeses')
+        .then((res) => res.json()) 
+        .then(res => dispatch(fetchCheesesSuccess(res))) 
+        .catch(err => dispatch(fetchCheesesError()));
 }

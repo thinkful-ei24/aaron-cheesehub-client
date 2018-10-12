@@ -6,10 +6,6 @@ import { getCheeseAction } from './actions/cheese';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.dispatch(getCheeseAction())
   }
